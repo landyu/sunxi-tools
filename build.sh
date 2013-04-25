@@ -26,7 +26,7 @@ build_br()
 {
     cd ${BR_ROOT}
     make O=${OUT_ROOT}/br cubieboard_defconfig
-    make O=${OUT_ROOT}/br LICHEE_GEN_ROOTFS=n
+    make O=${OUT_ROOT}/br dirs
 
     echo "Regenerating rootfs"
     
@@ -35,9 +35,7 @@ build_br()
 	make ARCH=arm modules_install INSTALL_MOD_PATH=${OUT_ROOT}/br/target
     )
 
-    make O=${OUT_ROOT}/br target-generic-getty-busybox
-    make O=${OUT_ROOT}/br target-finalize
-    make O=${OUT_ROOT}/br LICHEE_GEN_ROOTFS=y rootfs-ext4
+    make O=${OUT_ROOT}/br
     cp ${OUT_ROOT}/br/images/rootfs.ext4 ${OUT_ROOT}/
 }
 
