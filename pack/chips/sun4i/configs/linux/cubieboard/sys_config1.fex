@@ -381,10 +381,20 @@ tkey_int                 = port:PI13<6><default><default><default>
 motor_used               = 0
 motor_shake              = port:PB03<1><default><default><1>
 
+[leds_para]
+leds_used = 1
+leds_num = 2
+leds_pin_1 = port:PH20<1><default><default><0>
+leds_name_1 = "green:ph20:led1"
+leds_pin_2 = port:PH21<1><default><default><0>
+leds_name_2 = "blue:ph21:led2"
+
+
 ;----------------------------------------------------------------------------------
 ;gpio configuration
 ;----------------------------------------------------------------------------------
 [gpio_para]
+gpio_used                = 1
 gpio_num                 = 67
 gpio_pin_1               = port:PG03<1><default><default><1>
 gpio_pin_2               = port:PB19<1><default><default><1>
